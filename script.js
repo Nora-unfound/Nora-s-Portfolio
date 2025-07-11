@@ -1,16 +1,13 @@
 // header
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".menu-toggle");
-    const navList = document.querySelector("nav ul");
-
-    toggle.addEventListener("click", () => {
-      navList.classList.toggle("open");
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const navList = document.querySelector("nav ul");
+  toggle.addEventListener("click", () => {
+    navList.classList.toggle("open");
   });
+});
 
-
-
-// section hero 动态文字效果
+// section hero
 const words = ["tools", "systems", "stories"];
 let i = 0;
 let j = 0;
@@ -47,7 +44,8 @@ const texts = [
   "I love building elegant, efficient products—frontend, backend, and everything in between.",
   "I studied life sciences in Japan, and I’m fascinated by the logic behind how living systems work.",
   "I write my best code in quiet corners with coffee. It’s a ritual as much as a workflow.",
-  "Hot yoga clears my mind and resets my energy. It’s how I stay focused and grounded."
+  "Hot yoga clears my mind and resets my energy. It’s how I stay focused and grounded.",
+  "I find joy in the quiet ritual of scents—essential oils, perfumes, and the calm they bring."
 ];
 
 tags.forEach(tag => {
@@ -56,5 +54,43 @@ tags.forEach(tag => {
     tag.classList.add('active');
     const index = tag.getAttribute('data-index');
     description.textContent = texts[index];
+  });
+});
+
+// section projects
+
+  const carousel = document.querySelector('.project-carousel');
+  const leftBtn = document.querySelector('.scroll-btn.left');
+  const rightBtn = document.querySelector('.scroll-btn.right');
+
+  let currentOffset = 0;
+  const scrollStep = 340;
+  const maxOffset = (carousel.children.length - 1) * scrollStep;
+
+  rightBtn.addEventListener('click', () => {
+    if (currentOffset < maxOffset) {
+      currentOffset += scrollStep;
+      carousel.style.transform = `translateX(-${currentOffset}px)`;
+    }
+  });
+
+  leftBtn.addEventListener('click', () => {
+    if (currentOffset > 0) {
+      currentOffset -= scrollStep;
+      carousel.style.transform = `translateX(-${currentOffset}px)`;
+    }
+  });
+
+
+// section Contact
+const button = document.querySelector('.contact-button');
+const message = document.querySelector('.copy-message');
+
+button.addEventListener('click', () => {
+  navigator.clipboard.writeText("meme.265833@gmail.com").then(() => {
+    message.classList.add("show");
+    setTimeout(() => {
+      message.classList.remove("show");
+    }, 1500);
   });
 });

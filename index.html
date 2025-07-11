@@ -8,6 +8,16 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
+<script>
+  window.addEventListener('load', () => {
+    const navType = performance.getEntriesByType('navigation')[0].type;
+
+    if (navType === 'navigate') {
+      window.scrollTo(0, 0);
+    }
+  });
+</script>
+
 <body>
 
   <header>
@@ -18,7 +28,6 @@
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -40,29 +49,77 @@
     </div>
     <div class="about-right">
       <div class="tag-list">
-        <button class="tag active" data-index="0">Full Stack Dev</button>
+        <button class="tag active" data-index="0">Full Stack</button>
         <button class="tag" data-index="1">Life Sciences</button>
         <button class="tag" data-index="2">Code & Cafés</button>
         <button class="tag" data-index="3">Hot Yoga</button>
+        <button class="tag" data-index="4">Fragrance</button>
       </div>
       <div class="tag-description">
-        <p>I love building both frontend and backend, making things work end-to-end.</p>
+        <p>I love building elegant, efficient products—frontend, backend, and everything in between.</p>
       </div>
     </div>
   </div>
   </section>
 
-  <section id="projects" class="section section-white">
-    <div>Projects Section Content</div>
-  </section>
+<section id="projects" class="section section-white">
+  <h2 class="section-title">Projects</h2>
+  <div class="project-wrapper">
+    <button class="scroll-btn left" aria-label="Scroll left">&#10094;</button>
+    <div class="carousel-viewport">
+    <div class="project-carousel">
+      <a href="https://nora-unfound.github.io/Bubblo-Bubblo-App/" target="_blank" class="project-card">
+        <img src="your-project1.jpg" alt="Project 1 Screenshot" />
+        <h3>Bubblo Bubblo</h3>
+          <div class="tag-container">
+            <span class="project-tag">IOS</span>
+            <span class="project-tag">APP</span>
+            <span class="project-tag">Swift</span>
+            <span class="project-tag">White Noise</span>
+          </div>
+      </a>
+      <a href="https://nora-unfound.github.io/Nora-s-Portfolio/" target="_blank" class="project-card">
+        <img src="your-project2.jpg" alt="Project 2 Screenshot" />
+        <h3>Nora's Portfolio</h3>
+          <div class="tag-container">
+            <span class="project-tag">HTML/CSS</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Portfolio</span>
+          </div>
+        </a>
+      <div class="project-card">
+        <img src="your-project3.jpg" alt="Project 3 Screenshot" />
+        <h3>Coming Soon</h3>
+          <div class="tag-container">
+            <span class="project-tag">Coming Soon</span>
+          </div>
+      </div>
+      <div class="project-card">
+        <img src="your-project4.jpg" alt="Project 4 Screenshot" />
+        <h3>Coming Soon</h3>
+          <div class="tag-container">
+            <span class="project-tag">Coming Soon</span>
+          </div>
+      </div>
+    </div>
+    </div>
+    <button class="scroll-btn right" aria-label="Scroll right">&#10095;</button>
+  </div>
+</section>
 
-  <section id="skills" class="section section-transparent">
-    <div>Skills Section Content</div>
-  </section>
+<section id="contact" class="section section-transparent">
+  <h2 class="contact-title">Feel free to get in touch with me!</h2>
+  <button class="contact-button" id="copy-btn">
+    <img src="mail.svg" alt="Mail Icon" class="icon" />
+    Copy Email
+  <p id="copy-msg" class="copy-message">Copied to clipboard!</p>
+  </button>
+</section>
 
-  <section id="contact" class="section section-white">
-    <div>Contact Section Content</div>
-  </section>
+<footer class="site-footer">
+  <p>© 2025 Nora.</p>
+  <p>Built with lots of coffee.</p>
+</footer>
 
   <script src="script.js"></script>
 </body>

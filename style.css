@@ -1,4 +1,4 @@
-/* 基础样式 */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,13 +12,13 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  background: #dde7f0; /* 统一背景 */
+  background: #dde7f0; 
   background-attachment: fixed;
   background-size: cover;
   scroll-behavior: smooth;
 }
 
-/* 固定顶部导航 */
+/* header */
 header {
   position: fixed;
   top: 0;
@@ -53,11 +53,11 @@ nav a {
 }
 
 nav a:hover {
-  color: #81b3e9;
+  color: #8db4de;
 }
 
 .menu-toggle {
-  display: none; /* 默认隐藏按钮 */
+  display: none;
   font-size: 28px;
   background: none;
   border: none;
@@ -67,7 +67,6 @@ nav a:hover {
   margin-left: auto;
 }
 
-/* 小屏幕才显示按钮 */
 @media (max-width: 700px) {
   .menu-toggle {
     display: block;
@@ -95,22 +94,22 @@ nav a:hover {
   nav ul li {
     width: 100%;
     text-align: center;
-    padding: 14px 0;
+    padding: 15px 0;
   }
 
   nav ul li a {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #333;
     text-decoration: none;
   }
 
   nav ul li a:hover {
-    color: #81b3e9;
+    color: #8db4de;
   }
 }
 
 
-/* 所有 section 基础布局 */
+/* All sections */
 .section {
   height: 100svh;
   display: flex;
@@ -119,13 +118,13 @@ nav a:hover {
   padding: 40px;
 }
 
-/* 白纸页 */
+/* section-white */
 .section-white {
   background: white;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* 透明页 */
+/* section-transparent */
 .section-transparent {
   background: transparent;
 }
@@ -147,7 +146,7 @@ nav a:hover {
 }
 
 .typed-text {
-  color: #81b3e9;
+  color: #8db4de;
   font-weight: bold;
 }
 
@@ -170,7 +169,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -207,29 +206,30 @@ nav a:hover {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  padding-bottom: 12px;
+  padding: 12px;
 }
 
 .tag {
   padding: 12px 24px;
   border-radius: 50px;
   border: none;
-  background: #e8edf3;
-  color: #333;
+  background: #8db4de;
+  color: white;
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
   font-size: 1em;
+  flex-shrink: 0;  
 }
 
 .tag:hover {
-  background: #d6e0ec;
+  background: #6098d3;
 }
 
 .tag.active {
   background: white;
-  border: 2px solid #81b3e9;
-  color: #81b3e9;
+  border: 2px solid #8db4de;
+  color: #8db4de;
   font-weight: bold;
 }
 
@@ -267,3 +267,209 @@ nav a:hover {
     padding: 0 16px;
   }
 }
+
+/* section projects */
+
+#projects.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.7em;
+  margin-bottom: 48px;
+  position: absolute;
+  top: 22%;
+  transform: translateY(-50%);
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  font-size: 3.5em;     
+  width: 60px;       
+  height: 60px;
+  background: transparent;
+  border: none;
+  color: #333;          
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scroll-btn.left {
+  left: 20px;  /* 离屏幕左边 20px */
+}
+
+.scroll-btn.right {
+  right: 20px; /* 离屏幕右边 20px */
+}
+
+.project-card {
+  width: 300px;
+  height: 420px;
+  background: #dde7f0;
+  border-radius: 50px;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s;
+  text-decoration: none;
+}
+
+.project-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 40px;
+  margin-top: 22px ;
+  margin-bottom: 15px;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  font-size: 1.7em;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 22px;
+}
+
+.project-tag {
+  padding: 6px 12px;
+  border-radius: 50px;
+  border: none;
+  background: #8db4de;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 1em;
+  font-weight: 500;
+  flex-shrink: 0;  
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.carousel-viewport {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(300px * 3 + 40px * 2 + 20px * 2);
+  height: calc(420px + 35px * 2);
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+}
+
+.project-carousel {
+  display: flex;
+  gap: 40px;
+  padding-left: 20px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+
+}
+
+@media (max-width: calc(300px * 3 + 40px * 2 + 20px * 2 + 20px * 2 + 60px * 2)) {
+  .carousel-viewport {
+    width:calc(300px * 2 + 40px * 1 + 20px * 2);
+  }
+}
+
+@media (max-width: calc(300px * 2 + 40px * 1 + 20px * 2 + 20px * 2 + 60px * 2)) {
+  .carousel-viewport {
+    width:calc(300px * 1 + 20px * 2);
+  }
+}
+
+/* section contact */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-title {
+  padding: 45px;
+  font-size: 1.9em;
+  text-align: center;
+}
+
+.contact-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center; 
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: none;
+  background: #8db4de;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 1.5em;
+  font-weight: 600;
+  flex-shrink: 0;  
+  text-decoration: none;
+}
+
+.contact-button .icon {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+}
+
+.copy-message {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #8db4de;
+  font-size: 0.7em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+
+.copy-message.show {
+  opacity: 1;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* site footer */
+.site-footer {
+  height: 50svh;
+  text-align: center;
+  color: #555;
+  font-size: 0.9em;
+  background: white;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+

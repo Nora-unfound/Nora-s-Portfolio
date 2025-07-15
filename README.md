@@ -16,6 +16,7 @@ Nora’s Portfolio is a responsive, elegant, and modern web portfolio built to s
 ### 🔗 Live Preview
 
 Click here to view the portfolio
+https://nora-unfound.github.io/Nora-s-Portfolio/
 
 ---
 
